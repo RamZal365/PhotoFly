@@ -68,3 +68,10 @@ class UserViewSet(viewsets.ModelViewSet):
 
         else:
             return Response({'responseCode': JOIN_WAITING_ROOM_CODE, 'message': 'Accediendo a sala espera'})
+
+
+    @action(detail=True, methods=['get'])
+    def init_game(self, request, pk=None):
+        admin_user = CustomUser.objects.filter(pk=pk)
+
+        return Response({'message': 'Hello, world!'})

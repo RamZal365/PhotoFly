@@ -1,5 +1,5 @@
 WAITING = 1
-STARTING = 2
+UPLOADING_IMAGES = 2
 INITIATED = 3
 ENDED = 4
 MAX_USERS = 5
@@ -18,7 +18,7 @@ ARRIVAL_CITY = "PARIS"
 
 STATE = [
     (WAITING, 'Waiting'),
-    (STARTING, 'Starting'),
+    (UPLOADING_IMAGES, 'Starting'),
     (INITIATED, 'Initiated'),
     (ENDED, 'Ended')
 ]
