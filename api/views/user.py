@@ -11,7 +11,7 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     permission_classes = [permissions.AllowAny]
 
-    @action(detail=False, methods=['get'])
-    def join_game(self, request):
+    @action(detail=True, methods=['get'])
+    def join_game(self, request, pk=None):
 
         return Response({'message': 'Hello, world!'})
