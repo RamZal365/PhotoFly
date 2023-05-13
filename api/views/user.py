@@ -15,3 +15,9 @@ class UserViewSet(viewsets.ModelViewSet):
     def join_game(self, request, pk=None):
 
         return Response({'message': 'Hello, world!'})
+
+    @action(detail=True, methods=['get'])
+    def init_game(self, request, pk=None):
+        admin_user = CustomUser.objects.filter(pk=pk)
+
+        return Response({'message': 'Hello, world!'})
