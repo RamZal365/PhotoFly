@@ -5,6 +5,6 @@ from api.models.game import Game
 
 
 class CustomUser(User):
-    game = models.ForeignKey(Game, related_name='users', on_delete=models.CASCADE)
-    score = models.IntegerField(null=True)
+    game = models.ForeignKey(Game, related_name='users', null=True, blank=True, on_delete=models.CASCADE)
+    score = models.IntegerField(null=True, blank=True)
 
