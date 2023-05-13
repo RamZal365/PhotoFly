@@ -12,18 +12,19 @@ class Game(models.Model):
     departure_city = models.CharField(max_length=30)
     arrival_city = models.CharField(max_length=30)
 
-    def start_game(self):
+    def upload_images(self):
         self.state = STATE.UPLOADING_IMAGES
+        self.save()
+
+    def start_game(self):
+        self.state = STATE.INITIATED
+        self.round = 1
         self.save()
         game_users = self.users.all()
         for game_user in game_users:
             game_user.score = 0
+            game_user.has_played = False
             game_user.save()
-
-    def init_game(self):
-        self.state = STATE.INITIATED
-        self.round = 1
-        self.save()
 
     def next_round(self):
         self.round += 1
